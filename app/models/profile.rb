@@ -14,9 +14,13 @@ class Profile < ApplicationRecord
         candidate: ['Jill Stein', 'Gary Johnson', 'Evan McMullin'],
         state: swing_states,
         match_id: nil
-      ).sample.id
+      ).sample
 
-      m = User.where(id: m_id)
+      if m_id.nil?
+        return
+      end
+
+      m = User.where(id: m_id.id)
       if m.empty?
         return
       end
