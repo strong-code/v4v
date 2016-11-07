@@ -6,8 +6,11 @@
 <% else %>
   <h4>Your candidate: <%= current_user.profile.candidate %></h4>
   <h4>Your state: <%= current_user.profile.state %></h4>
-  <% if current_user.profile.match %>
-    <h4>Your matched voter: <%= current_user.profile.match %></h4>
+  <% if current_user.profile.matched_profile %>
+    <br>
+    <h4>Your matched voter: <%= current_user.profile.matched_user.email %></h4>
+    <h4>Their state: <%= current_user.profile.matched_profile.state %></h4>
+    <h4>Their candidate: <%= current_user.profile.matched_profile.candidate %></h4>
     <br>
     <a class="twitter-share-button" data-size="large" href="<%= @twitter_url %>">
       Tell your followers about Vote4Vote!

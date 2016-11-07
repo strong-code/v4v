@@ -2,7 +2,9 @@ class HomeController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @twitter_url = 'https://twitter.com/intent/tweet?text=' + URI.escape(twitter_text)
+    if current_user.profile && current_user.profile.completed
+      @twitter_url = 'https://twitter.com/intent/tweet?text=' + URI.escape(twitter_text)
+    end
     unless current_user.confirmed?
       flash[:error] = "You must confirm your email before continuing!"
     end
