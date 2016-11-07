@@ -25,6 +25,10 @@ class ProfilesController < ApplicationController
   def find_match
     @profile = current_user.profile
     @profile.find_match
+
+    if @profile.match_id.nil?
+      flash[:error] = "Sorry, but we couldn't find a suitable voter to match you with. Try spreading the word on Twitter, Facebook or email!"
+    end
     redirect_to root_url
   end
 
