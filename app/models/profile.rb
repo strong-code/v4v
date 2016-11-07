@@ -11,7 +11,7 @@ class Profile < ApplicationRecord
   def find_match
     if self.candidate = 'Hillary Clinton'
       m_id = Profile.where(
-        candidate: ['Jill Stein', 'Gary Johnson'],
+        candidate: ['Jill Stein', 'Gary Johnson', 'Evan McMullin'],
         state: swing_states,
         match_id: nil
       ).sample.id

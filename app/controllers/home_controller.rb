@@ -17,8 +17,10 @@ class HomeController < ApplicationController
       "I just ensured another swing-state vote for Hillary Clinton with #Vote4Vote! Trade your vote for #election2016 at"
     elsif current_user.profile.candidate = 'Jill Stein'
       "I just helped Jill Stein secure another vote with #Vote4Vote! Trade your vote for #election2016 at"
-    else
+    elsif current_user.profile.candidate = 'Gary Johnson'
       "I just helped Gary Johnson secure another vote with #Vote4Vote! Trade your vote for #election2016 at"
+    else
+      "I just helped Evan McMullin secure another vote with #Vote4Vote! Trade your vote for #election2016 at"
     end
   end
 
