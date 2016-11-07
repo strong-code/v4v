@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
-  
-  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+  get 'find_match', to: 'profiles#find_match'
+  resources :profiles
 end

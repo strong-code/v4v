@@ -7,12 +7,12 @@ module ApplicationHelper
       when 'error'
         "alert-danger"
       when 'alert'
-        "alert-block"
+        "alert-info"
       when 'notice'
         "alert-info"
       else
         flash_type.to_s
     end
   end
-  
+
 end

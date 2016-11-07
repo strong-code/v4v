@@ -1,0 +1,9 @@
+<%= form_for @profile do |f| %>
+<%= f.label :state %>
+<%= f.select :state, @states %>
+<br>
+<%= f.label :candidate %>
+<%= f.select :candidate, ['Hillary Clinton', 'Jill Stein', 'Gary Johnson'] %>
+<br>
+<%= f.submit :Submit %>
+<% end %>
