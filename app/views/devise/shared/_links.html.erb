@@ -20,6 +20,6 @@
 <br>
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to image_tag('twitter_signin', id: 'twitter-btn', height: '48'), omniauth_authorize_path(resource_name, provider) %><br />
+    <%= link_to image_tag('twitter_signin.png', id: 'twitter-btn', height: '48'), omniauth_authorize_path(resource_name, provider) %><br />
   <% end -%>
 <% end -%>
