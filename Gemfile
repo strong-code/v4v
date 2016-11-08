@@ -54,3 +54,4 @@ gem 'omniauth-facebook'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'rails_12factor', group: :production
