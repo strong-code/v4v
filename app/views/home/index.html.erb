@@ -1,8 +1,10 @@
 <h1>Vote4Vote</h1>
 
-<% unless current_user.profile && current_user.profile.completed? %>
-  <div class="alert alert-danger fade in">You must complete your profile before continuing</div>
+<% if !current_user.profile || !current_user.profile.completed? %>
+  <div class="alert alert-danger fade in">You must complete your profile before continuing.</div>
   <%= link_to "Create Profile", new_profile_path %>
+<% elsif !current_user.email_verified? %>
+  <div class="alert alert-danger fade in">You must verify your email before continuing. Check your email for the verification link.</div>
 <% else %>
   <h4>Your candidate: <%= current_user.profile.candidate %></h4>
   <h4>Your state: <%= current_user.profile.state %></h4>
