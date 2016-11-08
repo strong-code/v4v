@@ -10,6 +10,11 @@ class ProfilesController < ApplicationController
   end
 
   def create
+    if current_user.profile
+      flash[:warning] = "You already have filled out your profile. You can now match with another voter."
+      redirect_to root_url and return
+    end
+
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
     @profile.completed = true

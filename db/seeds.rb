@@ -7,7 +7,8 @@ user.skip_confirmation!
 user.save!
 user.profile = Profile.new(
   candidate: 'Jill Stein',
-  state: 'Ohio'
+  state: 'Ohio',
+  completed: true
 )
 user.profile.save!
 
@@ -20,6 +21,7 @@ user2.skip_confirmation!
 user2.save!
 user2.profile = Profile.new(
   candidate: 'Gary Johnson',
-  state: 'Florida'
+  state: 'Florida',
+  completed: true
 )
 user2.profile.save!
