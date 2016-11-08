@@ -14,12 +14,17 @@
     <h4>Their state: <%= current_user.profile.matched_profile.state %></h4>
     <h4>Their candidate: <%= current_user.profile.matched_profile.candidate %></h4>
     <br>
+    Send them an email to get in touch, or if you've signed up for your Slack chat, you can <a href="https://vote4vote.slack.com/">click here to join our Slack channel!</a>
   <% else %>
     <h2><%= link_to "Get matched with another voter!", find_match_path %></h2>
+    <br>
+    This will match you with another voter and their email, as well as provide them with your email address.
+    From there, you can discuss your plans to vote and pledge to trade in a mutually agreeable fashion!
   <% end %>
 <% end %>
 
 <p>
-<p>
-<p>
+<br>
+<br>
+<br>
 <%= link_to "Signout", destroy_user_session_path, method: :delete %>

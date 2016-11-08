@@ -25,3 +25,17 @@ user2.profile = Profile.new(
   completed: true
 )
 user2.profile.save!
+
+user3 = User.new(
+  :email                 => "test3@test.com",
+  :password              => "test123",
+  :password_confirmation => "test123"
+)
+user3.skip_confirmation!
+user3.save!
+user3.profile = Profile.new(
+  candidate: 'Hillary Clinton',
+  state: 'California',
+  completed: true
+)
+user3.profile.save!
