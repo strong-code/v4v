@@ -9,10 +9,38 @@
   </head>
 
   <body>
-    <div class="container">
-      <%= render partial: "shared/flash_messages", flash: flash %>
-      <%= image_tag('banner.png', class: 'img-responsive center-block') %>
-      <%= yield %>
+    <div class="container-fluid" id="main">
+      <div class="container">
+        <%= render partial: "shared/flash_messages", flash: flash %>
+        <span id="twitter">
+          Tell your followers about Vote4Vote!
+          <br>
+          <a class="twitter-share-button" data-size="large" href="<%= @twitter_url %>">
+            Tweet about Vote4Vote
+          </a>
+        </span>
+        <%= image_tag('banner.png', class: 'img-responsive center-block') %>
+        <%= yield %>
+      </div>
     </div>
+    <!-- <footer class="footer"> -->
+    <!-- </footer> -->
   </body>
 </html>
+
+<script>
+  window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+    return t;
+  }(document, "script", "twitter-wjs"));
+</script>
