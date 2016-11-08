@@ -9,7 +9,10 @@
   </head>
 
   <body>
-    <%= render partial: "shared/flash_messages", flash: flash %>
-    <%= yield %>
+    <div class="container">
+      <%= render partial: "shared/flash_messages", flash: flash %>
+      <%= image_tag('banner.png', class: 'img-responsive center-block') %>
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -36,7 +36,10 @@ class UsersController < ApplicationController
         redirect_to root_url, notice: 'Please check your email to confirm your account!'
       else
         @show_errors = true
+        render 'devise/finish_signup'
       end
+    else
+      render 'devise/finish_signup'
     end
   end
 

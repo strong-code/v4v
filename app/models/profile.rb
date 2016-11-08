@@ -16,7 +16,7 @@ class Profile < ApplicationRecord
         match_id: nil
       ).sample
 
-      if m_profile.nil?
+      if m_profile.nil? || m_profile == self
         return
       end
 

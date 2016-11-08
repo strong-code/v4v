@@ -27,7 +27,7 @@ class ProfilesController < ApplicationController
     @profile.find_match
 
     if @profile.match_id.nil?
-      flash[:error] = "Sorry, but we couldn't find a suitable voter to match you with. You can try again later, or try spreading the word on Twitter, Facebook or email!"
+      flash[:warning] = "Sorry, but we couldn't find a suitable voter to match you with. You can try again later, or try spreading the word on Twitter, Facebook or email!"
     end
     redirect_to root_url
   end
